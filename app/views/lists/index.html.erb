@@ -1,6 +1,10 @@
-<h1>Lists</h1>
-<ul>
+
+<div class="container text-center">
+  <h1 class="display-1">Lists</h1>
+
   <% @lists.each do |list| %>
-    <li><%= list.id %> - <%= link_to list.name, list_path(list.id) %></li>
+    <div class="fs-2">
+      <%= list.id %> - <%= link_to list.name, list_path(list.id), class: "text-decoration-none" %>
+    </div>
   <% end %>
-</ul>
+</div>

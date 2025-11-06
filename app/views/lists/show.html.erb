@@ -1,21 +1,24 @@
 
 <div class="container">
-  <div class="d-flex  display-1 m-3">
-    <h1>My <%= @list.name %></h1>
-
-    <%= link_to "Add a bookmark", new_list_bookmark_path(@list), class: "btn btn-outline-primary mr-2" %>
-    <%= link_to "Back", lists_path, class: "btn btn-outline-danger" %>
+  <div class="d-flex justify-content-between mt-3">
+    <h1 class="display-3">My <%= @list.name %></h1>
+    <div class="align-content-center">
+      <%= link_to "Add a film", new_list_bookmark_path(@list), class: "btn btn-outline-primary mr-2" %>
+      <%= link_to "Back", lists_path, class: "btn btn-outline-danger" %>
+    </div>
   </div>
-    <ul>
-      <% @list.bookmarks.each do |bookmark| %>
-        <li>
-          <h6><%= bookmark.movie.title %></h6>
-          <%= bookmark.movie.overview %>
-          <%= image_tag bookmark.movie.poster_url, alt: "text" %>
-          <%= bookmark.movie.rating %>
-          <strong><%= bookmark.comment %></strong>
-          <%= link_to "Delete", bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
-        </li>
-      <% end %>
-    </ul>
+    <% @list.bookmarks.each do |bookmark| %>
+        <div class="card-product mt-3">
+          <%= image_tag bookmark.movie.poster_url, alt: bookmark.movie.title %>
+          <div class="card-product-infos">
+            <h2><%= bookmark.movie.title %></h2>
+            <p><%= bookmark.movie.overview %></p>
+            <strong><%= bookmark.movie.rating %>/10</strong>
+            <p><i>"<%= bookmark.comment %>"</i></p>
+          </div>
+      </div>
+        <%= link_to "Delete", bookmark_path(bookmark),
+        data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},
+        class: "btn btn-outline-danger"%>
+    <% end %>
 </div>

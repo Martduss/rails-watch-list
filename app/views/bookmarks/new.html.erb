@@ -1,9 +1,15 @@
+ <div class="container">
+  <div class="d-flex justify-content-between mt-3">
+    <h3 class="display-3"><strong>Ajoute un film</strong></h3>
+    <div class="align-content-center">
+      <%= link_to "Back", list_path(@list), class: "btn btn-outline-danger" %>
+    </div>
+  </div>
+  <div class="mt-3">
+    <%= simple_form_for [@list, @bookmark] do |f| %>
+      <%= f.association :movie, collection: Movie.all, prompt: "Choose a film", label: false %>
+      <%= f.input :comment %>
+      <%= f.button :submit, "Add this film", class: "btn btn-outline-primary" %>
+    <% end %>
+  </div>
  </div>
-  <h3>Ajoute un film à la liste</h3>
-  <%= simple_form_for [@list, @bookmark] do |f| %>
-    <%= f.association :movie, collection: Movie.all, prompt: "Choose a film" %>
-    <%= f.input :comment %>
-    <%= f.button :submit, "Add this film" %>
-  <% end %>
-  <%= link_to "Back to the list", list_path(@list) %>
-</div>
