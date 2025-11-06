@@ -14,6 +14,17 @@ gem "pg", "~> 1.1"
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", ">= 5.0"
 
+#Front-gems
+gem "bootstrap", "~> 5.3"
+
+gem "autoprefixer-rails"
+
+gem "font-awesome-sass", "~> 6.1"
+
+gem "simple_form"
+
+gem "sassc-rails"
+
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
 gem "importmap-rails"
 
