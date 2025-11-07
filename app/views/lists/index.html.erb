@@ -1,10 +1,20 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://static.vecteezy.com/system/resources/previews/010/852/520/non_2x/cinema-entertainment-banner-vector.jpg);">
+  <div class="container text-align-right">
+    <h1><strong><%= link_to "Add a list", new_list_path, class: "btn btn-flat fs-1", style: "margin-left: 900px;" %></strong></h1>
+  </div>
+</div>
 
-<div class="container text-center">
-  <h1 class="display-1">Lists</h1>
-
+<div class="container justify-content-start">
+  <div class="d-flex mt-5 align-items-center justify-content-between">
+    <h2 class="display-6 "><strong>Your lists</strong></h2>
+    <%= link_to "Back", lists_path, class: "btn btn-outline-danger" %>
+  </div>
   <% @lists.each do |list| %>
-    <div class="fs-2">
-      <%= list.id %> - <%= link_to list.name, list_path(list.id), class: "text-decoration-none" %>
+    <div class="card-trip mt-5">
+      <div class="card-trip-infos">
+        <h3><%= list.id %> - <%= link_to list.name, list_path(list.id), class: "text-decoration-none" %></h3>
+      </div>
     </div>
   <% end %>
 </div>
+<%= render "footer" %>

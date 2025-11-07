@@ -1,6 +1,11 @@
+ <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://static.vecteezy.com/system/resources/previews/010/852/520/non_2x/cinema-entertainment-banner-vector.jpg);">
+  <div class="container text-align-right">
+    <h1 class="display-1 fs-1", style="margin-left: 900px;"><strong>Ajoute un film</strong></h1>
+  </div>
+</div>
+
  <div class="container">
   <div class="d-flex justify-content-between mt-3">
-    <h3 class="display-3"><strong>Ajoute un film</strong></h3>
     <div class="align-content-center">
       <%= link_to "Back", list_path(@list), class: "btn btn-outline-danger" %>
     </div>
@@ -8,7 +13,7 @@
   <div class="mt-3">
     <%= simple_form_for [@list, @bookmark] do |f| %>
       <%= f.association :movie, collection: Movie.all, prompt: "Choose a film", label: false %>
-      <%= f.input :comment %>
+      <%= f.input :comment, label: false, placeholder: "Your comment about this movie..." %>
       <%= f.button :submit, "Add this film", class: "btn btn-outline-primary" %>
     <% end %>
   </div>

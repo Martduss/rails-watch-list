@@ -1,7 +1,14 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://static.vecteezy.com/system/resources/previews/010/852/520/non_2x/cinema-entertainment-banner-vector.jpg);">
+  <div class="container text-align-right">
+    <h1 class="display-1 fs-1", style="margin-left: 900px;"><strong>Add a list</strong></h1>
+  </div>
+</div>
+
 <div class="container mt-3">
   <%= simple_form_for [@list] do |f| %>
-    <%= f.input :name, label: "Your new list's name", class: "display-3" %>
+    <%= f.input :name, label: false, class: "display-3", placeholder: "Your new list name" %>
     <%= f.submit %>
   <% end %>
   <%= link_to "Back", lists_path, class: "btn btn-outline-danger mt-3" %>
 </div>
+<%= render "footer" %>
