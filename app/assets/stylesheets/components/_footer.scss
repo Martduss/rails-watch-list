@@ -1,7 +1,4 @@
 .footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
   background: #F4F4F4;
   display: flex;
   align-items: center;
@@ -23,7 +20,4 @@
 }
 .footer-links a:hover {
   opacity: 1;
-}
-.footer .fa-heart {
-  color: #D23333;
 }

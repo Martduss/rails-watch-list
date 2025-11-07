@@ -3,12 +3,13 @@ class ListsController < ApplicationController
 
   def home
   end
-  
+
   def index
     @lists = List.all
   end
 
   def show
+    @bookmark = Bookmark.new
   end
 
   def new
